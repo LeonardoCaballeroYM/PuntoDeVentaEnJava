@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5832d91b-b45b-4991-9b12-b8b999cd51b3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     usuario.`id` AS usuario_id,
+     usuario.`nombre` AS usuario_nombre,
+     usuario.`apellido` AS usuario_apellido,
+     usuario.`tipo_usuario` AS usuario_tipo_usuario,
+     usuario.`correo` AS usuario_correo
+FROM
+     `usuario` usuario]]>
+	</queryString>
+	<field name="usuario_id" class="java.lang.Integer"/>
+	<field name="usuario_nombre" class="java.lang.String"/>
+	<field name="usuario_apellido" class="java.lang.String"/>
+	<field name="usuario_tipo_usuario" class="java.lang.String"/>
+	<field name="usuario_correo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="127" y="10" width="207" height="33" uuid="853a9cb3-6586-45c9-bcaf-9ccd64265a35"/>
+				<textElement>
+					<font fontName="Bookman Old Style" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Clothes Nexus]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="375" y="43" width="167" height="20" uuid="424a9944-ac90-4aa0-96de-775f4b6c84dc"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="64" height="79" uuid="1f15b64c-0266-479b-859e-695d28a77b44"/>
+				<imageExpression><![CDATA["C:\\Users\\Richard\\Documents\\Imagenes\\ClothesNexus.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="182" y="0" width="170" height="20" uuid="19f93d25-edd5-4fc7-b560-b7ac8d1a52dd"/>
+				<textElement>
+					<font fontName="Berlin Sans FB" size="16"/>
+				</textElement>
+				<text><![CDATA[Reporte de empleados]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="52" height="20" uuid="6260d89c-bc84-42fe-b3cc-d2b9be7d5c8c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Berlin Sans FB" size="12"/>
+				</textElement>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="2" width="100" height="20" uuid="f7d67ba1-f584-44e9-bc33-616241877270"/>
+				<textElement textAlignment="Center">
+					<font fontName="Berlin Sans FB" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="2" width="110" height="20" uuid="f4119143-9867-4533-b0a9-9cb16f91b968"/>
+				<textElement textAlignment="Center">
+					<font fontName="Berlin Sans FB" size="12"/>
+				</textElement>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="307" y="2" width="100" height="20" uuid="39a76745-6348-44e8-af77-40b802840179"/>
+				<textElement textAlignment="Center">
+					<font fontName="Berlin Sans FB" size="12"/>
+				</textElement>
+				<text><![CDATA[Tipo Usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="2" width="138" height="20" uuid="d96f583d-6bc5-4f69-96a9-bb137c0dbbc4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Berlin Sans FB" size="12"/>
+				</textElement>
+				<text><![CDATA[Correo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20" uuid="b2eaff88-08ea-4440-8c87-bf572de76a2a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Berlin Sans FB" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{usuario_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="0" width="100" height="20" uuid="15186c8e-0b9d-4195-9bd3-a9ada1362733"/>
+				<textElement textAlignment="Center">
+					<font fontName="Berlin Sans FB" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{usuario_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="0" width="110" height="20" uuid="34f2fe19-38a7-496f-bd0a-63ae2c54e5f6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Berlin Sans FB" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{usuario_apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="0" width="100" height="20" uuid="c579b350-8ec4-426c-a3f8-27d18f63823a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Berlin Sans FB" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{usuario_tipo_usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="138" height="20" uuid="fd1f606e-fcfd-4cf8-9ec2-bfb96325ca36"/>
+				<textElement textAlignment="Center">
+					<font fontName="Berlin Sans FB" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{usuario_correo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="197" y="19" width="80" height="20" uuid="03c15db6-a2af-4e8b-97cc-c4bc8a4d12f7"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="277" y="19" width="40" height="20" uuid="281e4c6f-bc07-473d-92c5-3a6c720f1204"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
